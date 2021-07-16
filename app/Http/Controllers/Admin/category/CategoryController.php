@@ -48,10 +48,10 @@ class CategoryController extends Controller
     public function softDelete($id)
     {
         $category = Category::find($id);
-        if ( $category->prodcuts != null ) {
+         if ( $category->prodcuts != null ) {
             $category->delete();
             $category->prodcuts()->delete();
-        }
+         }
         return redirect()->route('Categories.index')->with('success',' Category Deleted successfully');
     }
 

@@ -18,7 +18,7 @@
                     @endif
             </div>
         <div class="card-body">
-            <form action="{{route('Prodcuts.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('Prodcut.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1"> Name</label>

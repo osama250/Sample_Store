@@ -56,7 +56,7 @@
             <!-- small box -->
             <div class="small-box bg-info text-center">
               <div class="inner">
-                <h3>{{ App\Category::count()  }} </h3>
+                <h3>{{ App\Models\Category::count()  }} </h3>
                 <p> Categories </p>
               </div>
               <div class="icon">
@@ -72,7 +72,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>  {{ App\Prodcut::count()  }}  </h3>
+                <h3>  {{ App\Models\Prodcut::count()  }}  </h3>
                 <p> Prodcuts </p>
               </div>
               <div class="icon">
@@ -88,7 +88,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>  {{ App\Review::count()  }}  </h3>
+                <h3>  {{ App\Models\Review::count()  }}  </h3>
                 <p> Reivews </p>
               </div>
               <div class="icon">
@@ -99,24 +99,24 @@
               </a>
             </div>
           </div>
-        </div>
-        <!-- /.row -->
-        {{-- <div class="col-lg-3 col-6">
+          <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-fuchsia">
               <div class="inner">
-                <h3>  {{ App\Order::count()  }}  </h3>
+                <h3>  {{ App\Models\Order::count()  }}  </h3>
                 <p> Reivews </p>
               </div>
               <div class="icon">
                 <i class="fas fa-comments"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{ route('Orders.index') }}" class="small-box-footer">
+                 More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
             </div>
           </div>
-        </div> --}}
+        </div>
+        </div>
         <!-- /.row -->
     </section>
   </div>
-
 @endsection

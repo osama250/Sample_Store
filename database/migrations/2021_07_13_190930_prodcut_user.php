@@ -13,6 +13,7 @@ class ProdcutUser extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('prodcut_id')->unsigned();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

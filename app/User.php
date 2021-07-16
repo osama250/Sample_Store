@@ -15,18 +15,18 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password' , 'is_admin' , 'created_at' , 'updated_at'
     ];
-    protected $dates        = ['deleted_at'];
+    protected $dates  = ['deleted_at'];
 
     public function profile() {                               //  user have on profile
-        return $this->hasOne('App\profile_users');
+        return $this->hasOne('App\Models\profile_users');
     }
 
     public function user_reviews() {                        //  user have many reviews
-        return $this->HasMany('App\Review');
+        return $this->HasMany('App\Models\Review');
     }
 
     public function my_orders() {                          // user have many orders
-        return $this->belongsToMany('App\Prodcut');
+        return $this->belongsToMany('App\Models\Prodcut');
     }
 
     protected $hidden = [

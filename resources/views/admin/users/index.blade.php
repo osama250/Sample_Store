@@ -10,10 +10,10 @@
               <div class="card-header">
                 <div class="jumbotron container">
                     <h2 > All-Users</h2>
-                    <a class="text-center btn btn-primary" href="{{  route('Users.create')}}">
+                    <a class="text-center btn btn-primary" href="{{  route('User.create')}}">
                         <i class="fas fa-plus"></i> Create-User
                     </a>
-                    <a class="text-center btn btn-warning" href="{{ route('user.trash') }}">
+                    <a class="text-center btn btn-warning" href="{{ route('users.trash') }}">
                         <i class="fas fa-trash"></i> Trash-Users
                     </a>
                     @if ($message = Session::get('success'))
@@ -50,7 +50,7 @@
                             <div class="row">
                               <div class="col">
                                     <a class="btn btn-primary" style="margin-bottom: 5px"
-                                        href="{{ route('Users.show' , $user->id ) }}">
+                                        href="{{ route('User.show' , $user->id ) }}">
                                         <i class="fas fa fa-eye"></i>   Detail
                                     </a>
                                 </div>

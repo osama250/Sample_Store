@@ -17,13 +17,13 @@ class ProdcutTableSeeder extends Seeder
                 'name'         =>  'Iphone 12'  ,
                 'content'      =>  'Have Many Feature' ,
                 'price'        =>  '1000$' ,
-                'category_id'  =>  5
+                'category_id'  =>  4
             ] ,
             [
                 'name'         =>  'Iphone X'  ,
                 'content'      =>  'Have Many Feature' ,
                 'price'        =>  '800$' ,
-                'category_id'  =>  5
+                'category_id'  =>  4
             ] ,
             [
                 'name'         =>  'Tshirt'  ,
@@ -35,7 +35,7 @@ class ProdcutTableSeeder extends Seeder
                 'name'         =>  'Laptop Mac'  ,
                 'content'      =>  'Have Many Feature And Very Good For Performence' ,
                 'price'        =>  '3000$' ,
-                'category_id'  =>  6
+                'category_id'  =>  5 
             ]
         ]);
 

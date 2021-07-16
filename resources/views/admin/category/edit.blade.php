@@ -9,7 +9,7 @@
                 <h4> Edit-Category </h4>
             </div>
         <div class="card-body">
-            <form action="{{ route('Categories.update', $category->id) }}" method="POST">
+            <form action="{{ route('Category.update', $category->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">

@@ -9,8 +9,8 @@
 
               <div class="card-header">
                 <div class="jumbotron container">
-                    <h2 > All-Users</h2>
-                    <a class="text-center btn btn-primary" href="{{  route('Admins.create')}}">
+                    <h2> All-Admins </h2>
+                    <a class="text-center btn btn-primary" href="{{  route('Admin.create')}}">
                         <i class="fas fa-plus"></i> Create-Admin
                     </a>
                     @if ($message = Session::get('success'))
@@ -48,7 +48,7 @@
                             <div class="row">
                                 <div class="col">
                                     <a class="btn btn-danger" style="margin-bottom: 5px"
-                                        href="{{ route('Admins.destroy' , $admin->id ) }}">
+                                        href="{{ route('Admin.destroy' , $admin->id ) }}">
                                         <i class="fas fa fa-trash-alt"></i>   Delete
                                     </a>
                                 </div>

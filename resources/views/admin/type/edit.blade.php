@@ -17,7 +17,7 @@
                     @endif
             </div>
             <div class="card-body">
-                <form action="{{route('Types.update' , $type->id)}}" method="POST">
+                <form action="{{route('Type.update' , $type->id)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">

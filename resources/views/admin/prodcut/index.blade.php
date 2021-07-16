@@ -10,11 +10,11 @@
              <div class="card-header">
                 <div class="jumbotron container">
                     <h2> All-Prodcuts</h2>
-                    <a class="text-center btn btn-primary" href="{{  route('Prodcuts.create')}}">
-                        <i class="fas fa-plus"></i> Create-Prodcut 
+                    <a class="text-center btn btn-primary" href="{{  route('Prodcut.create')}}">
+                        <i class="fas fa-plus"></i> Create-Prodcut
                     </a>
-                    <a class="text-center btn btn-warning" href="{{ route('prodcut.trash') }}">
-                        <i class="fas fa-trash"></i> Trash-Prodcut  
+                    <a class="text-center btn btn-warning" href="{{ route('prodcuts.trash') }}">
+                        <i class="fas fa-trash"></i> Trash-Prodcut
                     </a>
                     @if ($message = Session::get('success'))
                     <div class="alert alert-info alert-dismissible fade show" role="alert"
@@ -51,13 +51,13 @@
                                 <div class="row">
                                     <div class="col">
                                         <a class="btn btn-primary" style="margin-bottom: 5px"
-                                          href="{{ route('Prodcuts.show' , $prodcut->id ) }}">
+                                          href="{{ route('Prodcut.show' , $prodcut->id ) }}">
                                           <i class="fas fa fa-eye"></i>   Detail
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="btn btn-success" style="margin-bottom: 5px"
-                                            href="{{ route('Prodcuts.edit' , $prodcut->id ) }}">
+                                            href="{{ route('Prodcut.edit' , $prodcut->id ) }}">
                                             <i class="fas fa fa-edit"></i>    Edit
                                         </a>
                                     </div>
@@ -65,7 +65,7 @@
                                         <a class="btn btn-danger" style="margin-bottom: 5px"
                                             href="{{ route('delete.prodcut' , $prodcut->id ) }}">
                                             <i class="fas fa fa-trash-alt"></i>   Delete
-                                        </a>                             
+                                        </a>
                                 </div>
                              </div>
                             </td>

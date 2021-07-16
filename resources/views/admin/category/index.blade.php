@@ -3,21 +3,21 @@
 
 @section('content')
 
-<div class="content-wrapper">    
+<div class="content-wrapper">
     <div class="container">
         <div class="card">
-            
+
               <div class="card-header">
                 <div class="jumbotron container">
                     <h2> All-Categories</h2>
-                    <a class="text-center btn btn-primary" href="{{ route('Categories.create') }}">
-                        <i class="fas fa-plus"></i> Create-Category 
+                    <a class="text-center btn btn-primary" href="{{ route('Category.create') }}">
+                        <i class="fas fa-plus"></i> Create-Category
                     </a>
-                    <a class="text-center btn btn-warning" href="{{ route('category.trash') }}">
-                        <i class="fas fa-trash"></i> Trash-Category 
+                    <a class="text-center btn btn-warning" href="{{ route('categories.trashed') }}">
+                    <i class="fas fa-trash"></i> Trash-Category
                     </a>
                     @if ($message = Session::get('success'))
-                        <div class="alert alert-info alert-dismissible fade show" role="alert" 
+                        <div class="alert alert-info alert-dismissible fade show" role="alert"
                                 style="margin-top: 10px">
                                 {{$message}}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <a class="btn btn-success" style="margin-bottom: 5px"
-                                            href="{{ route('Categories.edit' , $category->id ) }}">
+                                            href="{{ route('Category.edit' , $category->id ) }}">
                                             <i class="fas fa fa-edit"></i>    Edit
                                         </a>
                                     </div>
@@ -77,7 +77,7 @@
                 </table>
               </div>
               <!-- /.card-body -->
-        </div>            
-    </div>        
+        </div>
+    </div>
 </div>
 @endsection

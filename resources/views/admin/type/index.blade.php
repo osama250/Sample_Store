@@ -9,11 +9,11 @@
             <div class="card-header">
                 <div class="jumbotron container">
                     <h2> All-Types </h2>
-                    <a class="text-center btn btn-primary" href="{{ route('Types.create')}}">
-                        <i class="fas fa-plus"></i> Create-Type 
+                    <a class="text-center btn btn-primary" href="{{ route('Type.create')}}">
+                        <i class="fas fa-plus"></i> Create-Type
                     </a>
-                    <a class="text-center btn btn-warning" href="{{ route('type.trash') }}">
-                        <i class="fas fa-trash"></i> Trash-Types  
+                    <a class="text-center btn btn-warning" href="{{ route('types.trash') }}">
+                        <i class="fas fa-trash"></i> Trash-Types
                     </a>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-info alert-dismissible fade show" role="alert"
@@ -24,7 +24,7 @@
                             </button>
                         </div>
                     @endif
-                </div>                        
+                </div>
             </div>
             @php
                 $i = 1
@@ -49,7 +49,7 @@
                                   <div class="row">
                                       <div class="col">
                                           <a class="btn btn-success" style="margin-bottom: 5px"
-                                            href="{{ route('Types.edit' , $type->id ) }}">
+                                            href="{{ route('Type.edit' , $type->id ) }}">
                                             <i class="fas fa fa-edit"></i>    Edit
                                           </a>
                                       </div>
@@ -57,7 +57,7 @@
                                         <a class="btn btn-danger" style="margin-bottom: 5px"
                                             href="{{ route('delete.type' , $type->id ) }}">
                                             <i class="fas fa fa-trash-alt"></i>   Delete
-                                        </a>                               
+                                        </a>
                                   </div>
                                </div>
                               </td>
@@ -72,7 +72,7 @@
                         <th>Options </th>
                     </tr>
                     </tfoot>
-                  </table>                  
+                  </table>
             </div>
         </div>
     </div>

@@ -16,7 +16,6 @@ class OrderProductTableSeeder extends Seeder
             [
                 'user_id'        => 1 ,
                 'prodcut_id'     => 4
-
             ] ,
             [
                 'user_id'        => 2 ,

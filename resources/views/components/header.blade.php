@@ -103,7 +103,7 @@
         </div>
     </div>
     @php
-         $categories =  App\Category::orderBy('created_at','desc')->get();
+         $categories =  App\Models\Category::orderBy('created_at','desc')->get();
     @endphp
     <div class="nav-item">
         <div class="container">

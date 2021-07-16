@@ -14,7 +14,7 @@ class CategoriesController extends Controller
         return view('admin.category.index' , compact('categories'));
     }
 
-    public function trashedCategrires()
+    public function CategriresTrashed()
     {
         $categories = Category::onlyTrashed()->latest()->paginate(4);         // show only delete
         return view('admin.category.trash', compact('categories'));

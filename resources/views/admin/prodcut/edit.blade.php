@@ -9,7 +9,7 @@
                 <h4> Edit-Prodcut </h4>
             </div>
         <div class="card-body">
-            <form action="{{route('Prodcuts.update' , $prodcut->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('Prodcut.update' , $prodcut->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group">

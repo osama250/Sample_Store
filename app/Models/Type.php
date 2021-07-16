@@ -13,6 +13,6 @@ class Type extends Model
     protected $dates        = ['deleted_at'];
 
     public function prodcuts_type() {             // Many type of prodcut
-        return $this->belongsToMany('App\prodcut');
+        return $this->belongsToMany('App\Models\prodcut');
     }
 }

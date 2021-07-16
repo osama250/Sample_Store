@@ -15,7 +15,7 @@ class Review extends Model
     protected $dates    = ['deleted_at'];
 
     public function prodcut()  {
-        return $this->belongsTo('App\prodcut' , 'prodcut_id');
+        return $this->belongsTo('App\Models\prodcut' , 'prodcut_id');
     }
 
     public function user() {

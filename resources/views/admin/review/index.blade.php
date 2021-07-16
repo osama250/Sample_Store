@@ -3,15 +3,15 @@
 
 @section('content')
 
-<div class="content-wrapper">    
+<div class="content-wrapper">
     <div class="container">
       <div class="card">
 
             <div class="card-header">
                 <div class="jumbotron container">
                     <h2> All-Reviews </h2>
-                    <a class="text-center btn btn-warning" href="{{ route('review.trash') }}">
-                        <i class="fas fa-trash"></i> Trash-Reviews 
+                    <a class="text-center btn btn-warning" href="{{ route('reviews.trash') }}">
+                        <i class="fas fa-trash"></i> Trash-Reviews
                     </a>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-info alert-dismissible fade show" role="alert"
@@ -20,13 +20,13 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>                        
+                        </div>
                     @endif
-                </div>   
+                </div>
             </div>
               @php
                   $i = 1
-              @endphp              
+              @endphp
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped text-center">
                   <thead>
@@ -49,7 +49,7 @@
                                     <a class="btn btn-danger" style="margin-bottom: 5px"
                                         href="{{ route('delete.review' , $review->id ) }}">
                                         <i class="fas fa fa-trash-alt"></i>   Delete
-                                    </a>                         
+                                    </a>
                                 </div>
                              </div>
                             </td>
@@ -66,8 +66,8 @@
                   </tfoot>
                 </table>
               </div>
-              <!-- /.card-body -->     
-      </div>        
+              <!-- /.card-body -->
+      </div>
     </div>
 </div>
 @endsection

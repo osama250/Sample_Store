@@ -41,7 +41,7 @@
                         @if (isset($reviews) && $reviews->count() > 0)
                             @foreach ( $reviews as $review )
                                 <div class="form-check" style="margin-bottom: 8px">
-                                    <h5>  {{ $review->content }}  </h5>                                    
+                                    <h5>  {{ $review->content }}  </h5>
                                 </div>
                             @endforeach
                         @else

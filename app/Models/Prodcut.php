@@ -15,17 +15,17 @@ class Prodcut extends Model
     protected $dates    = ['deleted_at'];
 
     public function category() {                        //  prodcut have one category
-        return $this->belongsTo('App\Category', 'category_id');
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
     public function reviews() {                      //  prodcut have many reviews
-        return $this->hasMany('App\Review');
+        return $this->hasMany('App\Models\Review');
     }
 
     public function types() {                       //  prodcut have many type
-        return $this->belongsToMany('App\Type');
+        return $this->belongsToMany('App\Models\Type');
     }
-    public function orders() {                       //  prodcut have many type
+    public function orders() {
         return $this->belongsToMany('App\User');
     }
 }

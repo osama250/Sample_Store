@@ -10,9 +10,9 @@
         <div class="card-header">
             <div class="jumbotron container">
                 <h2> All-Orders </h2>
-                <a class="text-center btn btn-warning" href="{{ route('review.trash') }}">
+                {{-- <a class="text-center btn btn-warning" href="{{ route('Orders.index') }}">
                     <i class="fas fa-trash"></i> Trash-Orders
-                </a>
+                </a> --}}
                 @if ($message = Session::get('success'))
                     <div class="alert alert-info alert-dismissible fade show" role="alert"
                             style="margin-top: 10px">
@@ -32,7 +32,7 @@
       <table id="example1" class="table table-bordered table-striped text-center">
         <thead>
         <tr>
-          <th>#Num</th>          
+          <th>#Num</th>
           <th> UserName </th>
           <th> Orders </th>
           <th>Options </th>
@@ -59,7 +59,7 @@
                       <div class="row">
                       <div class="col">
                           <a class="btn btn-danger" style="margin-bottom: 5px"
-                              href="{{ route('delete.review' , $user->id ) }}">
+                              href="{{ route('Orders.destroy' , $user->id ) }}">
                               <i class="fas fa fa-trash-alt"></i>   Delete
                           </a>
                       </div>
@@ -70,7 +70,7 @@
         </tbody>
         <tfoot>
         <tr>
-            <th>#Num</th>          
+            <th>#Num</th>
             <th> UserName </th>
             <th> Orders </th>
             <th>Options </th>
