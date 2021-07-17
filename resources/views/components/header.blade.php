@@ -102,9 +102,6 @@
             </div>
         </div>
     </div>
-    @php
-         $categories =  App\Models\Category::orderBy('created_at','desc')->get();
-    @endphp
     <div class="nav-item">
         <div class="container">
             <div class="nav-depart">
@@ -112,7 +109,7 @@
                     <i class="ti-menu"></i>
                     <span> All departments </span>
                     <ul class="depart-hover">
-                        @foreach ( $categories as $category )
+                        @foreach ( get_categories() as $category )
                           <li><a href="#"> {{ $category->name }} </a></li>
                         @endforeach
                     </ul>

@@ -26,7 +26,7 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3> {{ App\User::where('is_admin' , 1 )->count() }} </h3>
+                    <h3> {{ count_Admins() }} </h3>
                     <p> Admins</p>
                   </div>
                   <div class="icon">
@@ -41,7 +41,7 @@
                 <!-- small box -->
                 <div class="small-box bg-primary">
                   <div class="inner">
-                    <h3> {{ App\User::where('is_admin' , 0)->count() }} </h3>
+                    <h3> {{ count_Users()  }} </h3>
                     <p> Users  </p>
                   </div>
                   <div class="icon">
@@ -56,7 +56,7 @@
             <!-- small box -->
             <div class="small-box bg-info text-center">
               <div class="inner">
-                <h3>{{ App\Models\Category::count()  }} </h3>
+                <h3>{{ count_Categories()  }} </h3>
                 <p> Categories </p>
               </div>
               <div class="icon">
@@ -72,7 +72,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>  {{ App\Models\Prodcut::count()  }}  </h3>
+                <h3>  {{ count_Prodcuts() }}  </h3>
                 <p> Prodcuts </p>
               </div>
               <div class="icon">
@@ -86,9 +86,24 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
+            <div class="small-box bg-gradient-gray">
+              <div class="inner">
+                <h3>  {{ count_Types() }}  </h3>
+                <p> Types </p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <a href="{{ route('Types.index') }}" class="small-box-footer">
+                  More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>  {{ App\Models\Review::count()  }}  </h3>
+                <h3>  {{  count_Reviews()  }}  </h3>
                 <p> Reivews </p>
               </div>
               <div class="icon">
@@ -103,8 +118,8 @@
             <!-- small box -->
             <div class="small-box bg-fuchsia">
               <div class="inner">
-                <h3>  {{ App\Models\Order::count()  }}  </h3>
-                <p> Reivews </p>
+                <h3>  {{  count_Orders() }}  </h3>
+                <p> Orders </p>
               </div>
               <div class="icon">
                 <i class="fas fa-comments"></i>
