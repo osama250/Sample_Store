@@ -13,7 +13,8 @@
                 @if ($prodcut->photo == Null )
                      {{'No Hvae Image'}}
                 @else
-                     <img src="{{URL::asset($prodcut->photo)}}" alt="{{$prodcut->photo}}" alt="Erorr" width="100%">
+                     <img src="/uploads/prodcuts/{{$prodcut->photo }}" alt="{{$prodcut->photo}}"
+                        alt="Erorr" class="img-responsiv" width="100%">
                 @endif
             </div>
             <div class="col-lg-8">

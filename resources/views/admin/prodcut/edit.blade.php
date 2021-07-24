@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1"> Photo </label>
-                    <input type="file" class="form-control" name="photo"  placeholder="Choose photo..">
+                    <input type="file" class="form-control" name="photo">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1"> Category </label>

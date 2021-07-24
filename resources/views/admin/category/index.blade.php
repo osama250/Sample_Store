@@ -38,6 +38,7 @@
                     <th>#Num</th>
                     <th>Name</th>
                     <th> Description</th>
+                    <th> Image </th>
                     <th>Options </th>
                   </tr>
                   </thead>
@@ -47,6 +48,14 @@
                             <td> {{ $i++  }}</td>
                             <td> {{ $category->name }}  </td>
                             <td> {{ $category->description }}  </td>
+                            <td>
+                                @if ($category->photo == Null )
+                                        {{'No Hvae Image'}}
+                                @else
+                                    <img src="/uploads/categories/{{$category->photo}}"
+                                        alt="{{$category->photo}}" class="img-size-64">
+                                @endif
+                            </td>
                             <td>
                                 <div class="row">
                                     <div class="col">
@@ -70,7 +79,8 @@
                   <tr>
                     <th>#Num</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th> Description</th>
+                    <th> Image </th>
                     <th>Options </th>
                   </tr>
                   </tfoot>

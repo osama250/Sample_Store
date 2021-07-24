@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
-                <div class="product-large set-bg" data-setbg="uploads/women-large.jpg">
+                <div class="product-large set-bg" data-setbg="/uploads/categories/{{$category->photo }}">
                     <h2> {{ $category->name }}  </h2>
                     <a href="#">Discover More</a>
                 </div>
@@ -23,7 +23,8 @@
                         <div class="product-item">
                             <div class="pi-pic">
                                 <img src="{{URL::asset($prodcut->photo)}}"
-                                    alt="{{$prodcut->photo}}" class="card-img-top">
+                                    alt="{{$prodcut->photo}}" class="card-img-top"
+                                    class="img-responsiv" width="100%">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -65,8 +66,8 @@
                         @foreach ( $phones as $phone )
                         <div class="product-item">
                             <div class="pi-pic">
-                                <img src="{{URL::asset($phone->photo)}}"
-                                    alt="{{$phone->photo}}">
+                                <img src="/uploads/prodcuts/{{$phone->photo }}"
+                                    alt="{{$phone->photo}}" class="img-responsiv" width="100%">
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -90,7 +91,7 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="product-large set-bg" data-setbg="uploads/phones.jpg"
+                <div class="product-large set-bg" data-setbg="/uploads/categories/{{ $category_phone ->photo }}"
                     style="margin-left: 50px">
                     <h2> {{ $category_phone->name }}  </h2>
                     <a href="#">Discover More</a>

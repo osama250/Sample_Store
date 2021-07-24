@@ -20,6 +20,10 @@ class TypesTableSeeder extends Seeder
             [
                 'size'   => 'mini' ,
                 'color'  => 'red'
+            ] ,
+            [
+                'size'   => 'mini' ,
+                'color'  => 'Gold'
             ]
         ]);
 
@@ -30,13 +34,13 @@ class TypesTableSeeder extends Seeder
                 'type_id'        => 1
             ] ,
             [
-                'prodcut_id'     => 1 ,
-                'type_id'        => 2
+                'prodcut_id'     => 2 ,
+                'type_id'        => 4
 
             ] ,
             [
-                'prodcut_id'     => 1 ,
-                'type_id'        => 3
+                'prodcut_id'     => 4 ,
+                'type_id'        => 2 
             ]
         ]);
 

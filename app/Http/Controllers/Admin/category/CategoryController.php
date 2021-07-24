@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin\category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Traits\UploadImg;
 
 class CategoryController extends Controller
 {
+    use UploadImg;
     public function create()
     {
         return  view('admin.category.create');
@@ -17,10 +19,21 @@ class CategoryController extends Controller
     {
         $request->validate(  [
             'name'               => 'required',
-            'description'        => 'required'
+            'description'        => 'required',
+            'photo'              => 'required|image' ,
         ]);
 
-        $cate  = Category::create ( $request->all() );
+        $path        = "uploads/categories";
+        $filename    = $this->upload_photo( $request->photo , $path );
+
+        $category  = Category::create([
+            'name'          => $request->name,
+            'description'   => $request->description ,
+            'photo'         => $filename
+        ]);
+        $category->save();
+
+        //$cate  = Category::create ( $request->all() );
         return redirect()->route('Categories.index')->with('success','Category Added Successfully');
     }
 
@@ -38,7 +51,20 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category               = Category::find($id);
+        $category  = Category::find($id);
+
+        $request->validate(  [
+            'name'               => 'required',
+            'description'        => 'required',
+            'photo'              => 'required|image' ,
+        ]);
+
+        if ( $request->has('photo') ) {
+            $path               = "uploads/categories";
+            $filename           = $this->upload_photo( $request->photo , $path );
+            $category->photo    = $filename;
+        }
+
         $category->name         = $request->name;
         $category->description  = $request->description;
         $category->save();
@@ -52,6 +78,9 @@ class CategoryController extends Controller
             $category->delete();
             $category->prodcuts()->delete();
          }
+         if ( $category->photo != null ) {
+            unlink("uploads/categories/$category->photo");
+      }
         return redirect()->route('Categories.index')->with('success',' Category Deleted successfully');
     }
 

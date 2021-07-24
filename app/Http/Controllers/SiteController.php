@@ -9,7 +9,7 @@ class SiteController extends Controller
 {
     public function index() {
 
-        // $category  = Category::orderBy('created_at','desc')->where('name' , '' )->get();
+        //$category            = Category::orderBy('created_at','desc')->where('name' , 'Women’s')->get();
         $category            = Category::find(2);
         $prodcuts            = $category->prodcuts;
         $category_phone      = Category::find(4);

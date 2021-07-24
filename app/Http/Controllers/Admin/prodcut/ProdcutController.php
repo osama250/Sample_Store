@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Prodcut;
 use App\Models\Category;
 use App\Models\Type;
+use App\Traits\UploadImg;
 
 class ProdcutController extends Controller
 {
+    use UploadImg;
     public function create()
     {
         $categories  = Category::orderBy('created_at','desc')->get();
@@ -28,15 +30,14 @@ class ProdcutController extends Controller
             'colors'        =>  'required'
         ]);
 
-        $photo = $request->photo;
-        $newPhoto = time().$photo->getClientOriginalName();  // new name of img
-        $photo->move('uploads',$newPhoto);
+        $path        = "uploads/prodcuts";
+        $filename    = $this->upload_photo( $request->photo ,$path);
 
         $prodcut = prodcut::create([
             'name'          =>  $request->name,
             'content'       =>  $request->content,
             'price'         =>  $request->price,
-            'photo'         =>  'uploads/' . $newPhoto,
+            'photo'         =>  $filename,
             'category_id'   =>  $request->category_id
         ]);
 
@@ -73,10 +74,9 @@ class ProdcutController extends Controller
         ]);
 
         if ( $request->has('photo') ) {
-            $photo = $request->photo;
-            $newPhoto = time().$photo->getClientOriginalName();
-            $photo->move('uploads',$newPhoto);
-            $prodcut->photo ='uploads/'.$newPhoto;
+            $path           = "uploads/prodcuts";
+            $filename       = $this->upload_photo( $request->photo ,$path);
+            $prodcut->photo = $filename;
         }
 
         $prodcut->name          =   $request->name;
@@ -96,8 +96,10 @@ class ProdcutController extends Controller
         $prodcut = prodcut::find($id);
         if ( $prodcut->reviews != null  ) {
             $prodcut->delete();
-        //  unlink($prodcut->photo);
             $prodcut->reviews()->delete();
+        if ( $prodcut->photo != null ) {
+              unlink("uploads/prodcuts/$prodcut->photo");
+        }
             return redirect()->route('Prodcuts.index')->with('success','Prodcut Deleted');
         }
     }
